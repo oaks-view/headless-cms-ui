@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import Layout from '../../../components/Layout';
 import StrapiService from '../../../services/StrapiService';
 
@@ -12,7 +13,8 @@ function Strapi({ blog }) {
             <h4 style={{ color: "#B095C9" }}>{blog.title}</h4>
 
             <div>
-                {blog.body}
+                {/* {blog.body} */}
+                <ReactMarkdown source={blog.body}/>
             </div>
         </Layout>
     );
