@@ -9,7 +9,10 @@ const styles = {
 function Strapi({ blogs }) {
     return (
         <Layout>
-            <h2>Strapi client page</h2>
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginTop: "1.3rem" }}>
+                <div style={{backgroundColor: "#3f51b5", padding: "1rem", marginRight: "1.2rem" }}><img src="/static/images/strapi.svg" alt="contenful logo" height={70} width={80} /></div>
+                <h2>Strapi's client page</h2>
+            </div>
             <p>This screen just fetches blog entries from strapi api's and displays them</p>
             <h4 style={{ color: "#B095C9" }}>Find the blog posts below</h4>
 

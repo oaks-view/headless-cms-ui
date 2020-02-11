@@ -10,7 +10,6 @@ export default function Api(baseURL = 'http://127.0.0.1:3000') {
     api.defaults.timeout = 60000;
 
     api.interceptors.response.use((response) => {
-        console.log(response);
         return Promise.resolve(response.data);
     }, function handleApiResponseError(resError) {
         console.log(resError.message);
