@@ -5,7 +5,8 @@ import { useRouter } from 'next/router';
 const linkStyle = {
   marginRight: 15,
   paddingRight: 1,
-  paddingLeft: 1
+  paddingLeft: 1,
+  cursor: 'pointer'
 };
 
 const selectedLinkStyle = {
