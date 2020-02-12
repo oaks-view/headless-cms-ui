@@ -1,8 +1,19 @@
 const path = require('path');
 const withSass = require('@zeit/next-sass');
+const axios = require('axios');
+const contentful = require('contentful');
 
 // const StrapiService = require('./services/StrapiService');
 // const ContentfulService = require('./services/ContentfulService');
+
+const contentfulClient = contentful.createClient({
+  space: "2h1x69tsm0oh",
+  accessToken: "XNNF69qwJCJbUao4IJ2dLA95vBORR5crqoFbFnc-4R4"
+});
+
+const strapiClient = axios.create({
+  baseURL: 'http://127.0.0.1:3000'
+});
 
 module.exports = withSass({
   cssModules: true,
@@ -25,6 +36,14 @@ module.exports = withSass({
       '/contentful/': { page: '/contentful' },
       '/strapi/': { page: '/strapi' },
     };
+
+    // strapi get all blog posts and add routes
+    const blogs = (await strapiClient.get('/blogs')).data;
+
+    blogs.forEach(blogPost => {
+      paths[`/strapi/${blogPost.id}`] = { page: '/strapi/[id]', query: { id: blogPost.id } };
+    });
+
 
     // const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
     // const data = await res.json();

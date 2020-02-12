@@ -1,6 +1,6 @@
-import ReactMarkdown from "@root/pages/strapi/@root/pages/contentful/react-markdown";
-import LayoutStrapi from '@root/pages/strapi/@components/LayoutStrapi';
-import StrapiService from '@root/pages/strapi/@services/StrapiService';
+import ReactMarkdown from "react-markdown";
+import LayoutStrapi from '@components/LayoutStrapi';
+import StrapiService from '@services/StrapiService';
 
 const styles = {
     container: {

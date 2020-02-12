@@ -1,4 +1,4 @@
-import LayoutDefault from "@root/components/LayoutDefault";
+import LayoutDefault from "@components/LayoutDefault";
 
 function LayoutStrapi({ children }) {
     return (

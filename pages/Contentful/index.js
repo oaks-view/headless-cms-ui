@@ -1,6 +1,6 @@
-import Link from '@root/pages/contentful/next/link';
-import LayoutContentful from '@root/pages/contentful/@components/LayoutContentful';
-import ContentfulService from '@root/pages/contentful/@services/ContentfulService';
+import Link from 'next/link';
+import LayoutContentful from '@components/LayoutContentful';
+import ContentfulService from '@services/ContentfulService';
 
 function Contentful({ books }) {
     return (

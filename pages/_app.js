@@ -1,4 +1,4 @@
-import LayoutDefault from '@root/components/LayoutDefault';
+import LayoutDefault from '@components/LayoutDefault';
 
 const MyApp = ({ Component, pageProps, router }) => {
   const Layout = Component.Layout || LayoutDefault;
