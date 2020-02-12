@@ -1,23 +1,24 @@
 import Link from 'next/link';
 import Layout from '../../components/Layout';
-import StrapiService from '../../services/StrapiService';
+// import ContentfulService from '../../services/ContentfulService';
+import ContentfulService from '../../services/ContentfulService';
 
-function Strapi({ blogs }) {
+function Contentful({ books }) {
     return (
         <Layout>
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "center",  marginTop: "1.3rem" }}>
                 <div style={{ backgroundColor: "#3f51b5", padding: "1rem", marginRight: "1.2rem" }}>
-                    <img src="/static/images/contentful.svg" alt="contenful logo" height={40} width={40} />
+                    <img src="/images/contentful.svg" alt="contenful logo" height={40} width={40} />
                 </div>
                 <h2>Contentful client page</h2>
             </div>
-            <p>This screen fetches bblogs from contentful and displays them</p>
-            <h4 style={{ color: "#B095C9" }}>Find the blog posts below</h4>
+            <p>This screen fetches books from contentful and displays them</p>
+            <h4 style={{ color: "#B095C9" }}>Find the book posts below</h4>
 
             <div>
                 <ul>
-                    {blogs.map(blog => {
-                        return <li key={blog.id}><Link href="/strapi/[id]" as={`/strapi/${blog.id}`}><a>{blog.title}</a></Link></li>
+                    {books.map(book => {
+                        return <li key={book.sys.id}><Link href="/contentful/[id]" as={`/contentful/${book.sys.id}`}><a>{book.fields.title}</a></Link></li>
                     })}
                 </ul>
             </div>
@@ -25,12 +26,12 @@ function Strapi({ blogs }) {
     );
 }
 
-Strapi.getInitialProps = async () => {
-    const blogs = await StrapiService.getBlogs();
+Contentful.getInitialProps = async () => {
+    const books = await ContentfulService.getBooks();
 
     return {
-        blogs
+        books
     };
 };
 
-export default Strapi;
+export default Contentful;

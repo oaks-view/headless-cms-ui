@@ -10,7 +10,7 @@ function Strapi({ blogs }) {
     return (
         <Layout>
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginTop: "1.3rem" }}>
-                <div style={{backgroundColor: "#3f51b5", padding: "1rem", marginRight: "1.2rem" }}><img src="/static/images/strapi.svg" alt="contenful logo" height={70} width={80} /></div>
+                <div style={{backgroundColor: "#3f51b5", padding: "1rem", marginRight: "1.2rem" }}><img src="/images/strapi.svg" alt="contenful logo" height={70} width={80} /></div>
                 <h2>Strapi's client page</h2>
             </div>
             <p>This screen just fetches blog entries from strapi api's and displays them</p>
@@ -19,7 +19,7 @@ function Strapi({ blogs }) {
             <div>
                 <ul>
                     {blogs.map(blog => {
-                        return <li key={blog.id}><Link href="/strapi/[id]" as={`/strapi/${blog.id}`}>{blog.title}</Link></li>
+                        return <li key={blog.id}><Link href="/strapi/[id]" as={`/strapi/${blog.id}`}><a>{blog.title}</a></Link></li>
                     })}
                 </ul>
             </div>
