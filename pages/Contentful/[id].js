@@ -1,8 +1,8 @@
-import ReactMarkdown from "react-markdown";
-import LayoutContentful from '@components/LayoutContentful';
-import ContentfulService from '@services/ContentfulService';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import * as _ from 'lodash';
+import ReactMarkdown from "@root/pages/contentful/react-markdown";
+import LayoutContentful from '@root/pages/contentful/@components/LayoutContentful';
+import ContentfulService from '@root/pages/contentful/@services/ContentfulService';
+import { documentToReactComponents } from '@root/pages/contentful/@contentful/rich-text-react-renderer';
+import * as _ from '@root/pages/contentful/lodash';
 
 const styles = {
     container: {

@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import LayoutStrapi from '@root/components/LayoutStrapi';
+import Link from '@root/pages/strapi/@root/pages/contentful/next/link';
+import LayoutStrapi from '@root/pages/strapi/@root/components/LayoutStrapi';
 import StrapiService from '../../services/StrapiService';
 
 function Strapi({ blogs }) {
