@@ -24,7 +24,6 @@ const selectedLinkStyle = {
 
 const PAGES = {
   HOME: '/',
-  ABOUT: "/about",
   STRAPI: "/strapi",
   CONTENTFUL: "/contentful"
 };
@@ -35,9 +34,6 @@ const Header = () => {
     <div>
       <Link href="/">
         <a style={{...linkStyle, ...(router.pathname === PAGES.HOME && selectedLinkStyle || {})}}>Home</a>
-      </Link>
-      <Link href={PAGES.ABOUT}>
-        <a style={{...linkStyle, ...(router.pathname === PAGES.ABOUT && selectedLinkStyle || {})}}>About</a>
       </Link>
       <Link href={PAGES.STRAPI}>
         <a style={{...linkStyle, ...(router.pathname.includes(PAGES.STRAPI) && selectedLinkStyle || {})}}>Strapi</a>
