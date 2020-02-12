@@ -30,7 +30,7 @@ module.exports = withSass({
     return config;
   },
   exportTrailingSlash: true,
-  exportPathMap: async function() {
+  exportPathMap: async function () {
     const paths = {
       '/': { page: '/' },
       '/contentful/': { page: '/contentful' },
@@ -44,14 +44,17 @@ module.exports = withSass({
       paths[`/strapi/${blogPost.id}`] = { page: '/strapi/[id]', query: { id: blogPost.id } };
     });
 
+    // contentful get all books
+    const books = await contentfulClient.getEntries({
+      content_type: "book",
+      locale: 'en-US',
+      select: 'sys.id,fields.title,fields.author,fields.publicationDate'
+    })
+      .then(response => response.items);
 
-    // const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-    // const data = await res.json();
-    // const shows = data.map(entry => entry.show);
-
-    // shows.forEach(show => {
-    //   paths[`/show/${show.id}`] = { page: '/show/[id]', query: { id: show.id } };
-    // });
+    books.forEach(book => {
+      paths[`/contentful/${book.sys.id}`] = { page: '/contentful/[id]', query: { id: book.sys.id } };
+    });
 
     return paths;
   }
