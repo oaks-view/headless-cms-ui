@@ -40,10 +40,10 @@ const Header = () => {
         <a style={{...linkStyle, ...(router.pathname === PAGES.ABOUT && selectedLinkStyle || {})}}>About</a>
       </Link>
       <Link href={PAGES.STRAPI}>
-        <a style={{...linkStyle, ...(router.pathname === PAGES.STRAPI && selectedLinkStyle || {})}}>Strapi</a>
+        <a style={{...linkStyle, ...(router.pathname.includes(PAGES.STRAPI) && selectedLinkStyle || {})}}>Strapi</a>
       </Link>
       <Link href={PAGES.CONTENTFUL}>
-        <a style={{...linkStyle, ...(router.pathname === PAGES.CONTENTFUL && selectedLinkStyle || {})}}>Contentful</a>
+        <a style={{...linkStyle, ...(router.pathname.includes(PAGES.CONTENTFUL) && selectedLinkStyle || {})}}>Contentful</a>
       </Link>
     </div>
   )
