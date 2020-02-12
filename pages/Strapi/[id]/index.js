@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
-import Layout from '../../../components/Layout';
-import StrapiService from '../../../services/StrapiService';
+import LayoutStrapi from '@components/LayoutStrapi';
+import StrapiService from '@services/StrapiService';
 
 const styles = {
     container: {
@@ -15,9 +15,9 @@ const styles = {
     }
 };
 
-function Strapi({ blog }) {
+function StrapiBlogDetailPage({ blog }) {
     return (
-        <Layout>
+        <>
             <h2>Strapi Blog detail page</h2>
             <h4 style={styles.blogHeading}>{blog.title}</h4>
 
@@ -25,11 +25,11 @@ function Strapi({ blog }) {
                 {/* {blog.body} */}
                 <ReactMarkdown source={blog.body}/>
             </div>
-        </Layout>
+        </>
     );
 }
 
-Strapi.getInitialProps = async ctx => {
+StrapiBlogDetailPage.getInitialProps = async ctx => {
     const {
         query: { id },
       } = ctx;
@@ -40,4 +40,6 @@ Strapi.getInitialProps = async ctx => {
     };
 };
 
-export default Strapi;
+StrapiBlogDetailPage.Layout = LayoutStrapi;
+
+export default StrapiBlogDetailPage;

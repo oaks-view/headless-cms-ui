@@ -1,9 +1,9 @@
-import Layout from '../components/Layout';
+import LayoutDefault from '@components/LayoutDefault';
 
 export default function About() {
   return (
-    <Layout>
       <p>This is the about page</p>
-    </Layout>
   );
 }
+
+About.Layout = LayoutDefault;

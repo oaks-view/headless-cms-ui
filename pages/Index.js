@@ -1,10 +1,10 @@
-import Layout from '../components/Layout';
+import LayoutDefault from '@components/LayoutDefault';
 import '../styles/main.scss';
 
 export default function Index() {
   return (
-    <Layout>
-      <p>LetsCoOwn Home</p>
-    </Layout>
+      <p>Demo Home</p>
   );
 }
+
+Index.Layout = LayoutDefault;
