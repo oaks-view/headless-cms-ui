@@ -10,7 +10,7 @@ const cmsList = [
 export default function Index() {
   return (
     <>
-      <p>This app is simply a view for the following headless cms.</p>
+      <h2>This app is simply a view for the following headless cms.</h2>
       <p>The pages in the app are all static html pages that have been prebuilt and now served from a CDN.
         Just follwing the <b>JamStack principles</b></p>
 
