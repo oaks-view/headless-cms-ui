@@ -35,7 +35,7 @@ module.exports = withSass({
     };
 
     // strapi get all blog posts and add routes
-    const blogs = (await strapiClient.get('/blogs')).data;
+    const blogs = (await strapiClient.get('/blogs?_sort=created_at:desc')).data;
 
     blogs.forEach(blogPost => {
       paths[`/strapi/${blogPost.id}`] = { page: '/strapi/[id]', query: { id: blogPost.id } };

@@ -5,7 +5,7 @@ const api = Api(strapiHost);
 
 export default class StrapiService {
     static getBlogs() {
-        return api.get('/blogs?_sort=createdAt:DESC');
+        return api.get('/blogs?_sort=created_at:desc');
     }
 
     static getBlogById(id) {
