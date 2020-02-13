@@ -1,6 +1,6 @@
 import Api from './Api';
 
-const strapiHost = 'http://127.0.0.1:3000';
+const strapiHost = 'https://cms-strapi-mz.herokuapp.com';
 const api = Api(strapiHost);
 
 export default class StrapiService {
