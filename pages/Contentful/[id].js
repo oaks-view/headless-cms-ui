@@ -23,11 +23,18 @@ const styles = {
         minheight: '40rem'
     },
     coverPhoto: {
-        width: '30%',
+        width: '80%',
         marginRight: '1.2rem',
+    },
+    imageContainer: {
+        width: 200,
+        backgroundColor: '#fff',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        marginRight: '3rem'
     },
     firstPage: {
         width: '65%',
+        height: '18rem'
     }
 };
 
@@ -38,7 +45,9 @@ function ContentfulBookDetailPage({ book }) {
             <h2>Contentful Book detail page</h2>
             <h4 style={styles.bookTitle}>{book.fields.title}, by - {book.fields.author}</h4>
             <div style={styles.bookCover}>
-                <img src={coverPhotoUrl} alt='image not found' height={90} width={50}/>
+                <div style={styles.imageContainer}>
+                    <img src={coverPhotoUrl} alt='image not found' style={styles.coverPhoto} />
+                </div>
                 <div style={styles.firstPage}>{documentToReactComponents(book.fields.firstPage)}</div>
             </div>
         </>
